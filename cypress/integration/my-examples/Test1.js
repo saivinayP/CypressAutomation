@@ -35,4 +35,21 @@ describe('My First test Suit', function () {
         })
     })
 
+    it('Assertion to check if logo text dispalyed as expected', function () {
+        if(cy.get('.brand').should('have.text','GREENKART')){
+            cy.log('Expected text found') //print tetx to test runner logs
+            console.log('Text Found') //prints text ot browser console
+        }
+    })
+
+    it('Aliasing', function () {
+        cy.get('.products').as('ProductElementLocator') //aliasing element locator
+        cy.get('@ProductElementLocator').find('.product').eq(0).contains('ADD TO CART').click()
+    })
+    
+    it('Checkout', function () {
+        cy.get('a.cart-icon').click()
+        cy.get('button').contains('PROCEED TO CHECKOUT').click()
+        cy.get(':nth-child(14)').click()
+    })
 })
