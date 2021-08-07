@@ -29,6 +29,10 @@ describe('My First test Suit', function () {
         })
     })
 
-
+    it('Print text from logo', function () {
+        cy.get('.brand').then(function(element){
+            cy.log(element.text())
+        })
+    })
 
 })
