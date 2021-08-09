@@ -9,6 +9,7 @@
   "author": "SaiVinay Paladugu",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^8.2.0"
+    "cypress": "^8.2.0",
+    "cypress-iframe": "^1.0.1"
   }
 }
